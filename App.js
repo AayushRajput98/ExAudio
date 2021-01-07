@@ -7,7 +7,7 @@ import { StyleSheet, Text, View, TouchableOpacity, ToastAndroid, Dimensions } fr
 
 const recordingOptions = {
   android: {
-    extension: ".m4a",
+    extension: ".wav",
     outputFormat: Audio.RECORDING_OPTION_ANDROID_OUTPUT_FORMAT_MPEG_4,
     audioEncoder: Audio.RECORDING_OPTION_ANDROID_AUDIO_ENCODER_AAC,
     sampleRate: 44100,
@@ -41,9 +41,9 @@ export default function App() {
             name: Platform.OS === "ios" ? `${Date.now()}.wav` : `${Date.now()}.m4a`,
             type: Platform.OS === "ios" ? "audio/x-wav" : "audio/m4a",
           },
-          `${Date.now()}.m4a`
+          `${Date.now()}.wav`
         );
-        fetch("http://srivalab-compute.cse.iitk.ac.in:5016/test", {
+        fetch("https://xxxx:port", {
           method: "POST",
           body: formData,
         })
